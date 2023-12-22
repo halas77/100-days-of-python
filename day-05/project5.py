@@ -25,7 +25,6 @@ for j in range(0, nr_symbols):
 for k in range(0, nr_symbols):
     password += random.choice(number)
     
-
 # Shuffle the list of characters
 random.shuffle(password)
 
