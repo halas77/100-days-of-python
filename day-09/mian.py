@@ -37,7 +37,7 @@ travel = [
         "visted" : 12,
         "cities" : ["Paris", "Lille", "Dijon"] 
     },
-    {
+    {w
         "country" : "Germany",
         "visted" : 5,
         "cities" : ["Berlin", "Hamburg", "Stuttgart"] 
