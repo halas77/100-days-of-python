@@ -19,13 +19,12 @@ def choose_cards():
     card1 = random.choice(cards)
     return card1
 
-def add_cards(num1, num2):
-    sum = num1 + num2   
-    return sum
+def add_cards(cards):
+      return sum(cards)
 
 def greater(num1, num2):
     if num1 > num2 and num1 < 22:
-         print("Congragulations! You Won!!!")        
+        print("Congragulations! You Won!!!")        
     elif num1 == num2:
         print("Draw!!!")
     elif num1 > 21 or num2 > num1: 
@@ -33,31 +32,33 @@ def greater(num1, num2):
    
    
 def main_function():
-    user_card1 = choose_cards()
-    user_card2 = choose_cards()
-    user_score = add_cards(user_card1, user_card2)
     
-    print(f"Your card: [{user_card1}, {user_card2}], current score: {user_score}") 
-    computer_card1 = choose_cards()
-    computer_card2 = choose_cards()
-    computer_score = add_cards(computer_card1, computer_card2)
+    user = []
+    computer = []
+
+    for _ in range(2):
+        user.append(choose_cards())
+        computer.append(choose_cards())
     
-    print(f"Computer's card: {computer_card1}")
+    user_score = add_cards(user)
+    computer_score = add_cards(computer)
+    print(f"Your card: [{user[0]}, {user[1]}], current score: {user_score}") 
+    print(f"Computer's card: {computer[0]}")
     
     
     user_want = input("Type 'y' to get another card, type 'n' to pass: ")
     
     if user_want == "y":
-        user_card3 = choose_cards()
-        user_score = add_cards(user_score, user_card3)
-        print(f"Your card: [{user_card1}, {user_card2}, {user_card3}], current score: {user_score}")
-        print(f"Computer's card: [{computer_card1}, {computer_card2}], final score: {computer_score}")
+        user.append(choose_cards())
+        user_score = add_cards(user)
+        print(f"Your card: [{user[0]}, {user[1]}, {user[2]}], current score: {user_score}")
+        print(f"Computer's card: [{computer[0]}, {computer[1]}], final score: {computer_score}")
         greater(user_score, computer_score)
         
         
     else:
-        print(f"Your card: [{user_card1}, {user_card2}] current score: {user_score}")
-        print(f"Computer's card: [{computer_card1}, {computer_card2}], final score: {computer_score}")
+        print(f"Your card: [{user[0]}, {user[1]}] current score: {user_score}")
+        print(f"Computer's card: [{computer[0]}, {computer[1]}], final score: {computer_score}")
         greater(user_score, computer_score)
         
    
