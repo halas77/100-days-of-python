@@ -8,11 +8,11 @@ from data import data
 print(logo)
 
 
-def Comparator(item1, item2):
+def Comparator(guess, item1, item2):
     if item1["follower_count"] > item2["follower_count"]:
-        return item1
+        return guess == "a"
     else:
-        return item2 
+        return guess == "b"
     
     
 # choose random objects from data
@@ -47,14 +47,9 @@ while not game_over:
         
     user_answer = input("Who has more followers? Type 'A' or 'B': ").lower()
 
-    correct_answer = Comparator(object1, object2)
+    correct_answer = Comparator(user_answer, object1, object2)
 
-    if user_answer == 'a' and correct_answer["name"] == object1["name"]:
-        score += 1
-        object1 = object2
-        object2 = Chooser(data)
-    elif user_answer == 'b' and correct_answer["name"] == object2["name"]:
-        print("The answer is B.")
+    if correct_answer:
         score += 1
         object1 = object2
         object2 = Chooser(data)
@@ -63,14 +58,3 @@ while not game_over:
         game_over = True
     
     
-
-
-
-
-
-
-
-
-
-
-# if not quit the loop 
