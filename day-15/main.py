@@ -79,7 +79,7 @@ while not turnoff:
             print("Sorry you don't have enough water")
         
             
-    else:
+    elif users_preffered_drink == "off":
         turnoff = True
             
         
