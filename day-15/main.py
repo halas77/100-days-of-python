@@ -28,7 +28,7 @@ while not turnoff:
     elif users_preffered_drink == "latte" or users_preffered_drink == "cappuccino":
         water = MENU[users_preffered_drink]["ingredients"]["water"]
         milk = MENU[users_preffered_drink]["ingredients"]["milk"] 
-        coffee = MENU[users_preffered_drink]["ingredients"]["coffee"]
+        coffee = MENU[users_preffered_drink]["ingredients"]["coffee"] 
         if corrent_water > water and corrent_milk > milk and corrent_coffee > coffee:
             print("Please insert coins.")
             quarters = float(input("How many quarters: "))
