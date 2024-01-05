@@ -24,7 +24,7 @@ for list in turtle_lists:
     y += 30
     i += 1
     
-is_on = False
+is_on = False 
 
 if user_bet:
     is_on = True
