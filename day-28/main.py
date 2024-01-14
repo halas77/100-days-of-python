@@ -7,7 +7,7 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 1
+WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
@@ -18,8 +18,7 @@ reps = 0
 
 def timer_starter():
     global reps
-    reps += 1
-    
+    reps += 1 
     work_sec = WORK_MIN * 60
     short_break = SHORT_BREAK_MIN * 60
     long_break = LONG_BREAK_MIN * 60
@@ -33,6 +32,7 @@ def timer_starter():
     else:
         timer.config(text="Work", fg=GREEN)
         count_down(work_sec)
+        window.after_cancel()
         
     
 # -------------------------- COUNTDOWN MECHANISM ------------------------- # 
@@ -64,10 +64,8 @@ checked.grid(column=1, row=3)
 start = Button(text="Start",  fg="#000000", command=timer_starter)
 start.grid(column=0, row=2)
 
-
 Reset = Button(text="Reset",  fg="#000000")
 Reset.grid(column=2, row=2)
-
 
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file="./day-28/tomato.png")
