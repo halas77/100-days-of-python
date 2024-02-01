@@ -1,9 +1,15 @@
 from bs4 import BeautifulSoup
 import requests
 
-CLIENT_ID = "2a08c292e478430a8b418c76b50a06dc"
-CLIENT_SECRET = "df161eb1ec2d4974a442eb967e067526"
-TOKEN = "BQDBKJ5eo5jxbtpWjVOj7ryS84khybFpP_lTqzV7uV-T_m0cTfwvdn5BnBSKPxKgEb11"
+
+
+
+
+
+
+# CLIENT_ID = ""
+# CLIENT_SECRET = ""
+# TOKEN = ""
 
 
 # user_time = input("Please choose a specific time: Valid Format[YYYY-MM-DD]: ")
@@ -20,18 +26,21 @@ TOKEN = "BQDBKJ5eo5jxbtpWjVOj7ryS84khybFpP_lTqzV7uV-T_m0cTfwvdn5BnBSKPxKgEb11"
 # print(formatted_songs)
 
 
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
+# import spotipy
+# from spotipy.oauth2 import SpotifyOAuth
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
-                                               client_secret=CLIENT_SECRET,
-                                               redirect_uri="http://localhost:8080",
-                                               scope="user-library-read"))
+# sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
+#                                                client_secret=CLIENT_SECRET,
+#                                                redirect_uri="http://localhost:8080",
+#                                                scope="user-library-read"))
 
-results = sp.current_user_saved_tracks()
-for idx, item in enumerate(results['items']):
-    track = item['track']
-    print(idx, track['artists'][0]['name'], " – ", track['name'])
+# results = sp.current_user_saved_tracks()
+# for idx, item in enumerate(results['items']):
+#     track = item['track']
+#     print(idx, track['artists'][0]['name'], " – ", track['name'])
+
+
+
 
 
 
