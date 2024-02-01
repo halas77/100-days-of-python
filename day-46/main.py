@@ -1,11 +1,14 @@
-from bs4 import BeautifulSoup
-import requests
+# from bs4 import BeautifulSoup
+# import requests
 
+# response = requests.get("https://jiji.com.et/mobile-phones")
+# data = response.text
 
+# soup = BeautifulSoup(data, "html.parser")
 
-
-
-
+# salaries = soup.find_all(name="div", class_="qa-advert-price")
+# formatted = [salary.getText().strip("\n\n") for salary in salaries]
+# print(formatted)
 
 # CLIENT_ID = ""
 # CLIENT_SECRET = ""
